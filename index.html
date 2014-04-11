@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>css小例子</title>
     <style>
+        #main { display: flex; }
+        article { flex:1;         order: 2; }
+        nav     { width: 200px;   order: 1; }
+        aside   { width: 200px;   order: 3; }
+
         #all{
             display: flex;
             flex-flow: column;
@@ -17,11 +22,21 @@
 <header>
     <h2>一些CSS的演示</h2>
 </header>
+<div id="main">
+<nav>
+    <p>i' nav</p>
+</nav>
+<article>
 <section id="all">
 <a href="CssTest.html">Flex的试用</a>
 <a href="CssRotate.html">div的旋转</a>
     <a href="CSS_W3.htm">引自w3s的css首页</a>
 </section>
+</article>
+<aside>
+    <p>i'm aside</p>
+</aside>
+</div>
 <footer>
 
 </footer>
