@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<style>
+    #deals {
+        display: flex;        /* 应为是伸缩布局每一个商品有同样高度 */
+        flex-flow: row wrap;  /* 让商品折行                     */
+    }
+    .sale-item {
+        display: flex;        /* 用伸缩布局配置每一个商品的描述 */
+        flex-flow: column;    /* 垂直配置商品的内容           */
+    }
+    .sale-item > img {
+        order: -1;            /* 将图像挪到其他内容之前（视觉顺序） */
+        align-self: center;   /* 在侧轴（水平向）置中图像         */
+    }
+    .sale-item > button {
+        margin-top: auto;     /* 自动顶端外边距让按钮置底 */
+    }
+</style>
+
+<section id='deals'>
+    <section class='sale-item'>
+        <button>下单！</button>
+        <h1>电脑初学者配备</h1>
+        <p>如果你的钱不够多，这是你可以买到的最好的电脑。
+        <ul>
+            <li>电脑
+            <li>屏幕
+            <li>键盘
+            <li>滑鼠
+        </ul>
+
+        <img src='images/computer.jpg' width="400" height="400"
+             alt='你可以得到：一台白色的电脑与其他配备。'>
+    </section>
+    <section class='sale-item'>
+        <h1>电脑初学者配备</h1>
+        <p>如果你的钱不够多，这是你可以买到的最好的电脑。
+        <ul>
+            <li>电脑
+            <li>屏幕
+        </ul>
+        <img src='images/computer.jpg' width="400" height="400"
+             alt='你可以得到：一台白色的电脑与其他配备。'>
+        <button>下单！</button>
+    </section>
+
+</section>
+
+<!--小记：
+-->
+<hgrp>
+<h3>--------因为是flex，所以各项默认向右扩展，即（行内）。</h3>
+<h3>--------然后遇到span，也是右扩展，但是span里的多个结点则用原来的定义，即：block。</h3>
+</hgrp>
+<div style="display: flex">
+    <!-- 伸缩项目：块级子元素 -->
+    <div id="item1">块</div>
+
+    <!-- 伸缩项目：浮动元素 ― 用户代理会忽略浮动 -->
+    <div id="item2" style="float: left;">浮动</div>
+
+    <!-- 伸缩项目：包着行内内容的匿名块盒 -->
+    匿名项目 3
+
+    <!--合成一个整体参与伸缩。-->
+    <span>abcd<div>33</div></span>
+
+    <!-- 伸缩项目：行内子元素 -->
+    <div id="item4">span</div>
+
+   <span>
+    <!-- 伸缩项目：<span> 变成 'display: block'，所以没有行内块现象。-->
+         项目 5
+        <div id=not-an-item>项目 5</div>
+        项目 5
+    </span>
+    <!-- 伸缩项目：行内子元素 -->
+    <div id="item5">span</div>
+
+</div>
+
+<h3>---------实例：在id内指定为flex， flex-flow:row wrap。width=300. 所以产生折行</h3>
+<style>
+    #flexbox {
+        display: flex;
+        flex-flow: row wrap;
+        width: 300px;
+    }
+    .item {
+        background-color: #105cb6;
+        width: 80px;
+        flex:auto;
+    }
+</style>
+
+<div id="flexbox">
+    <div class='item'>1</div>
+    <div class='item'>2</div>
+    <div class='item'>3</div>
+    <div class='item'>4</div>
+</div>
+<button onclick='javascript:alert("hello")'>Hello</button>
+</body>
+</html>
